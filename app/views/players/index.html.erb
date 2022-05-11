@@ -1,0 +1,13 @@
+
+
+<%@players.each do |pl|%>
+<%= pl.name%><br>
+<%= pl.nation%><br>
+<%= pl.number%><br>
+
+<%= link_to "edit" , edit_player_path(pl)%>
+<%= link_to "delete" , player_path(pl), data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?" }    %></li><br><br><br>
+
+<%end%>

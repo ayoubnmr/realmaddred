@@ -1,0 +1,19 @@
+
+<%= form_for @player do |pl| %>
+<% if @player.errors.any? %>
+    <ul>
+      <% @player.errors.each do |error, msg| %>
+        <li><%= "#{error} - #{msg}" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<%= pl.label :name %><br>
+<%= pl.text_field :name%><br>
+<%= pl.label :nation%><br>
+<%= pl.text_field :nation%><br>
+<%= pl.label :number%><br>
+<%= pl.text_field :number%><br>
+<%= pl.submit "create"%>
+<%end%>
+
+<%= link_to "all players", players_path%>
